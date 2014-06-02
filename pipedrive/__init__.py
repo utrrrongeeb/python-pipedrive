@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from httplib2 import Http
+import six
 from six.moves.urllib.parse import urlencode
 import json
 from copy import copy
@@ -34,7 +35,7 @@ class Pipedrive(object):
                     else:
                         response, data = self.http.request("%s%s/%s?%s" % (PIPEDRIVE_API_URL, endpoint, data['id'], urlencode(data)), method)
 
-		return json.loads(data)
+		return json.loads(six.text_type(data, encoding='utf-8'))
 
 	def __init__(self, login = None, password = None):
 		self.http = Http()
