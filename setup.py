@@ -7,6 +7,7 @@ setup(
 
     install_requires = [
         "httplib2",
+	"six",
     ],
 
     description='Light wrapper around Pipedrive API',

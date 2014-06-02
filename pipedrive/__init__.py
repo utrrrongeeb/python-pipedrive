@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from httplib2 import Http
-from urllib import urlencode
+from six.moves.urllib.parse import urlencode
 import json
 from copy import copy
 
